@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times NBA</title>
+    <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+    <header>
+        <img id="logo" src="./assets/Logo-nba.png" alt="logo nba"/>
+    </header>
+
+    <div class="main-container">
+        <div class="container-pesquisa">
+
+            <span class="orientacao-cliente">Pesquise um time específico:</span>
+
+            <div class="container-form">
+                <form>
+                    <input type="text" name="team" id="team-search" placeholder="Pesquise pelo nome do time">
+                    <button id="pesquisar" type="button" onclick="botaoPesquisar()">Pesquisar</button>
+                </form>
+            </div>
+
+            <span class="orientacao-cliente">Ou utilize os filtros abaixo, para visualizar os times por categoria:</span>
+
+            <div class="container-filtros">
+                <span class="orientacao-filtro">Conferência</span>
+
+                <div class="filtros conferencia">
+                    <button class="filtrar-conferencia" id="east" onclick="filtrarTimesNBA('east')">Leste</button>
+                    <button class="filtrar-conferencia" id="west" onclick="filtrarTimesNBA('west')">Oeste</button>
+                </div>
+            </div> 
+
+            <div class="container-filtros">
+                <span class="orientacao-filtro">Divisão</span>
+
+                <div class="filtros">
+                    <button class="filtrar-divisao" id="atlantic" onclick="filtrarTimesNBA('atlantic')" >Atlântico</button>
+                    <button class="filtrar-divisao" id="central" onclick="filtrarTimesNBA('central')" >Central</button>
+                    <button class="filtrar-divisao" id="northwest" onclick="filtrarTimesNBA('northwest')" >Noroeste</button>
+                    <button class="filtrar-divisao" id="pacific" onclick="filtrarTimesNBA('pacific')" >Pacífico</button>
+                    <button class="filtrar-divisao" id="southeast" onclick="filtrarTimesNBA('southeast')" >Sudeste</button>
+                    <button class="filtrar-divisao" id="southwest" onclick="filtrarTimesNBA('southwest')">Sudoeste</button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="container-dados">
+
+            <span id="anuncio-resultado"></span>
+
+            <!-- CRIAr CARD DE UNICO TIME -->
+            <div id="team-content">
+                <span class ="capsula-time-info">Time: <span class= "time-info" id="nome"></span></span>
+                <span class ="capsula-time-info">Conferência: <span class="time-info" id="conferencia"></span></span>
+                <span class ="capsula-time-info">Divisão: <span class="time-info" id="divisao"></span></span>
+                <span class ="capsula-time-info">Cidade: <span class="time-info" id="cidade"></span></span>
+            </div>
+
+            <!-- CRIAR TABELA COM TIMES NO JAVASCRIPT -->
+            <table id="tabela-times">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Conferência</th>
+                        <th>Divisão</th>
+                        <th>Cidade</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-corpo">
+                    <!-- Os dados da tabela vão ser impressos aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+            <script src="script.js"></script>
+</body>
+</html>
