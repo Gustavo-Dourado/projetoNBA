@@ -51,6 +51,8 @@ header{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 form{
@@ -74,6 +76,8 @@ button{
     height: 30px;
     padding: 0 3px;
     cursor: pointer;
+    border-radius: 8px;
+    border: none;
 }
 
 .orientacao-cliente{
@@ -92,20 +96,27 @@ button{
 .container-filtros{
     width: 100%;
     background-color: #678a5c;
-    padding-bottom: 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 8px;
 }
 
 .filtros{
     width: 90%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10px;
+    
 }
 
-.conferencia{
-    width: 40%;
+.divisao{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
 }
 
 .filtrar-conferencia{
@@ -158,11 +169,13 @@ button{
 }
 
 #tabela-times{
+    min-width: 345px;
     overflow: auto;
     width: 100%;
     max-height: 800px;
     border: 2px solid white;
     border-spacing: 0;
+    border-radius: 8px;
     margin: 0 auto;
     display: none;
 }
@@ -200,6 +213,10 @@ td{
 }
 
 @media (max-width: 619px){
+
+    .divisao{
+        grid-template-columns: repeat(3, 1fr);
+    }
     
     .container-dados{
         padding: 0 10px;
